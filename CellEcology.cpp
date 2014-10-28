@@ -7,3 +7,7 @@ CellState LiveWithZero::transition() {
 CellState LiveWithOne::transition() {
   return CellState::DEAD;
 }
+
+CellState LiveWithTwo::transition() {
+  return CellState::DEAD;
+}
