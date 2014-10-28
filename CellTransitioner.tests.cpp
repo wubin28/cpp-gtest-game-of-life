@@ -1,5 +1,6 @@
 #include "CellState.h"
 #include "CellTransitioner.h"
+#include "CellEcology.h"
 #include <gtest/gtest.h>
 
 using namespace ::testing;
