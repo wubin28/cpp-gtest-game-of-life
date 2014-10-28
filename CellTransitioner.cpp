@@ -1,12 +1,11 @@
 #include "CellTransitioner.h"
-#include "Cell.h"
-#include <typeinfo>
+#include "CellState.h"
 
-Cell* CellTransitioner::transition(Cell *cell, int numOfLiveNeighbours) {
-  if (typeid(*cell) == typeid(LiveCell)) {
+CellState CellTransitioner::transition(CellState cellState, int numOfLiveNeighbours) {
+  if (cellState == CellState::ALIVE) {
     if (numOfLiveNeighbours < 2) {
-      return new DeadCell;
+      return CellState::DEAD;
     }
   }
-  return nullptr;
+  return CellState::DEAD;
 }

@@ -1,11 +1,11 @@
 #ifndef CELLTRANSITIONER_H
 #define CELLTRANSITIONER_H
 
-#include "Cell.h"
+#include "CellState.h"
 
 class CellTransitioner {
 public:
-  Cell* transition(Cell *cell, int numOfLiveNeighbours);
+  CellState transition(CellState cellState, int numOfLiveNeighbours);
 };
 
 #endif
