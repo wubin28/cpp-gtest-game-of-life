@@ -79,7 +79,6 @@ TEST(CellTransitioner, Any_live_cell_with_more_than_three_live_neighbours_dies_a
   ASSERT_EQ(CellState::DEAD, transitionedCell);
 }
 
-// TODO-intention-working-on: Any dead cell with exactly three live neighbours becomes a live cell as if by reproduction
 TEST(CellTransitioner, Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell_as_if_by_reproduction) {
   // Arrange
   CellState deadCell = CellState::DEAD;
