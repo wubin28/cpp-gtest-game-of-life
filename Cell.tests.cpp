@@ -6,7 +6,15 @@ using namespace ::testing;
 // TODO-intention-working-on: Any live cell with fewer than two live neighbours dies as if caused by under_population
 TEST(Cell, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population)
 {
-    ASSERT_EQ(typeid(DeadCell), typeid(*transitionedCell));
+  // Arrange
+  LiveCell *liveCell = new LiveCell;
+  CellTransitioner *cellTransitioner = new CellTransitioner;
+
+  // Act
+  Cell *transitionedCell = cellTransitioner->transition(liveCell, 1);
+
+  // Assert
+  ASSERT_EQ(typeid(DeadCell), typeid(*transitionedCell));
 }
 
 // TODO-intention: Any live cell with two or three live neighbours lives on to the next generation
