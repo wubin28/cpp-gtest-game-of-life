@@ -23,23 +23,21 @@ TEST(CellEcology, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_c
   ASSERT_EQ(CellState::DEAD, transitionedCellState);
 }
 
-TEST(CellTransitioner, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation) {
+TEST(CellEcology, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation) {
   // Arrange
-  CellState liveCell = CellState::ALIVE;
-  CellTransitioner *cellTransitioner = new CellTransitioner;
-  CellState transitionedCell = CellState::UNKNOWN;
+  CellState transitionedCellState;
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 2);
+  transitionedCellState = (new LiveWithTwo)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::ALIVE, transitionedCell);
+  ASSERT_EQ(CellState::ALIVE, transitionedCellState);
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 3);
+  transitionedCellState = (new LiveWithThree)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::ALIVE, transitionedCell);
+  ASSERT_EQ(CellState::ALIVE, transitionedCellState);
 }
 
 TEST(CellTransitioner, Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding) {
