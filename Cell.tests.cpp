@@ -1,4 +1,5 @@
 #include "Cell.h"
+#include "CellTransitioner.h"
 #include <gtest/gtest.h>
 
 using namespace ::testing;
