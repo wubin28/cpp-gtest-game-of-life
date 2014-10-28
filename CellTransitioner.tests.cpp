@@ -4,23 +4,25 @@
 
 using namespace ::testing;
 
-TEST(CellTransitioner, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population) {
+// TODO-refactoring-working-on: Replace class CellTransitioner with class CellEcology and 18 subclasses. Each subclass stands for a situation in which the cell is connecting with some live neighbours (from 0 to 8 for a live and dead cell).
+TEST(CellEcology, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population) {
   // Arrange
-  CellState liveCell = CellState::ALIVE;
-  CellTransitioner *cellTransitioner = new CellTransitioner;
-  CellState transitionedCell = CellState::UNKNOWN;
+  CellState transitionedCellState = CellState::UNKNOWN;
+  CellEcology *cellEcology;
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 0);
+  cellEcology = new LiveWithZero;
+  transitionedCellState = cellEcology->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 1);
+  cellEcology = new LiveWithOne;
+  transitionedCellState = cellEcology->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 }
 
 TEST(CellTransitioner, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation) {
