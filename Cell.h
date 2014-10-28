@@ -7,4 +7,7 @@ class Cell {
 class LiveCell : public Cell {
 };
 
+class DeadCell : public Cell {
+};
+
 #endif
