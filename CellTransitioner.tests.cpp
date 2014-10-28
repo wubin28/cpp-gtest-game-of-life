@@ -4,8 +4,7 @@
 
 using namespace ::testing;
 
-TEST(CellTransitioner, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population)
-{
+TEST(CellTransitioner, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population) {
   // Arrange
   CellState liveCell = CellState::ALIVE;
   CellTransitioner *cellTransitioner = new CellTransitioner;
@@ -23,6 +22,24 @@ TEST(CellTransitioner, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as
   ASSERT_EQ(CellState::DEAD, transitionedCell);
 }
 
-// TODO-intention: Any live cell with two or three live neighbours lives on to the next generation
+// TODO-intention-working-on: Any live cell with two or three live neighbours lives on to the next generation
+TEST(CellTransitioner, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation) {
+  // Arrange
+  CellState liveCell = CellState::ALIVE;
+  CellTransitioner *cellTransitioner = new CellTransitioner;
+
+  // Act
+  CellState transitionedCell = cellTransitioner->transition(liveCell, 2);
+
+  // Assert
+  ASSERT_EQ(CellState::ALIVE, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(liveCell, 3);
+
+  // Assert
+  ASSERT_EQ(CellState::ALIVE, transitionedCell);
+}
+
 // TODO-intention: Any live cell with more than three live neighbours dies as if by overcrowding
 // TODO-intention: Any dead cell with exactly three live neighbours becomes a live cell as if by reproduction
