@@ -35,3 +35,39 @@ CellState LiveWithSeven::transition() {
 CellState LiveWithEight::transition() {
   return CellState::DEAD;
 }
+
+CellState DeadWithZero::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithOne::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithTwo::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithThree::transition() {
+  return CellState::ALIVE;
+}
+
+CellState DeadWithFour::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithFive::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithSix::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithSeven::transition() {
+  return CellState::DEAD;
+}
+
+CellState DeadWithEight::transition() {
+  return CellState::DEAD;
+}
