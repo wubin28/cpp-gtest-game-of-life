@@ -9,6 +9,9 @@ CellState CellTransitioner::transition(CellState cellState, int numOfLiveNeighbo
     if (numOfLiveNeighbours < 4) {
       return CellState::ALIVE;
     }
+    if (numOfLiveNeighbours < 9) {
+      return CellState::DEAD;
+    }
   }
   return CellState::UNKNOWN;
 }

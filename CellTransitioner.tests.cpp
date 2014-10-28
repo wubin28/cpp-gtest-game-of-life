@@ -42,7 +42,6 @@ TEST(CellTransitioner, Any_live_cell_with_two_or_three_live_neighbours_lives_on_
   ASSERT_EQ(CellState::ALIVE, transitionedCell);
 }
 
-// TODO-intention: Any live cell with more than three live neighbours dies as if by overcrowding
 TEST(CellTransitioner, Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding) {
   // Arrange
   CellState liveCell = CellState::ALIVE;
