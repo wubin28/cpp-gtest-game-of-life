@@ -1,4 +1,4 @@
-#include "Cell.h"
+#include "CellState.h"
 #include "CellTransitioner.h"
 #include <gtest/gtest.h>
 
@@ -8,14 +8,14 @@ using namespace ::testing;
 TEST(Cell, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population)
 {
   // Arrange
-  LiveCell *liveCell = new LiveCell;
+  CellState liveCell = CellState::ALIVE;
   CellTransitioner *cellTransitioner = new CellTransitioner;
 
   // Act
-  Cell *transitionedCell = cellTransitioner->transition(liveCell, 1);
+  CellState transitionedCell = cellTransitioner->transition(liveCell, 1);
 
   // Assert
-  ASSERT_EQ(typeid(DeadCell), typeid(*transitionedCell));
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
 }
 
 // TODO-intention: Any live cell with two or three live neighbours lives on to the next generation
