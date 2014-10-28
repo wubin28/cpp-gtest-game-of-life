@@ -79,4 +79,58 @@ TEST(CellTransitioner, Any_live_cell_with_more_than_three_live_neighbours_dies_a
   ASSERT_EQ(CellState::DEAD, transitionedCell);
 }
 
-// TODO-intention: Any dead cell with exactly three live neighbours becomes a live cell as if by reproduction
+// TODO-intention-working-on: Any dead cell with exactly three live neighbours becomes a live cell as if by reproduction
+TEST(CellTransitioner, Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell_as_if_by_reproduction) {
+  // Arrange
+  CellState deadCell = CellState::DEAD;
+  CellTransitioner *cellTransitioner = new CellTransitioner;
+  CellState transitionedCell = CellState::UNKNOWN;
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 1);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 2);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 3);
+
+  // Assert
+  ASSERT_EQ(CellState::ALIVE, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 4);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 5);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 6);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 7);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(deadCell, 8);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+}
