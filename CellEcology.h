@@ -7,6 +7,8 @@ public:
 };
 
 class LiveWithZero : public CellEcology {
+public:
+  CellState transition() override;
 };
 
 #endif
