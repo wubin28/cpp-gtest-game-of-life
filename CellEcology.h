@@ -1,101 +1,99 @@
 #ifndef CELLECOLOGY_H
 #define CELLECOLOGY_H
 
-#include "CellState.h"
-
 class CellEcology {
 public:
-  CellState virtual transition() = 0;
+  bool virtual isAliveAfterTransitioned() = 0;
 };
 
 class LiveWithZero : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithOne : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithTwo : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithThree : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithFour : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithFive : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithSix : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithSeven : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class LiveWithEight : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithZero : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithOne : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithTwo : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithThree : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithFour : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithFive : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithSix : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithSeven : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 class DeadWithEight : public CellEcology {
 public:
-  CellState transition() override;
+  bool isAliveAfterTransitioned() override;
 };
 
 #endif

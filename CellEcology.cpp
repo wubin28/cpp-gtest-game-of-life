@@ -1,73 +1,74 @@
 #include "CellEcology.h"
 
-CellState LiveWithZero::transition() {
-  return CellState::DEAD;
+bool LiveWithZero::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState LiveWithOne::transition() {
-  return CellState::DEAD;
+bool LiveWithOne::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState LiveWithTwo::transition() {
-  return CellState::ALIVE;
+bool LiveWithTwo::isAliveAfterTransitioned() {
+  return true;
 }
 
-CellState LiveWithThree::transition() {
-  return CellState::ALIVE;
+bool LiveWithThree::isAliveAfterTransitioned() {
+  return true;
 }
 
-CellState LiveWithFour::transition() {
-  return CellState::DEAD;
+bool LiveWithFour::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState LiveWithFive::transition() {
-  return CellState::DEAD;
+bool LiveWithFive::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState LiveWithSix::transition() {
-  return CellState::DEAD;
+bool LiveWithSix::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState LiveWithSeven::transition() {
-  return CellState::DEAD;
+bool LiveWithSeven::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState LiveWithEight::transition() {
-  return CellState::DEAD;
+bool LiveWithEight::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithZero::transition() {
-  return CellState::DEAD;
+bool DeadWithZero::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithOne::transition() {
-  return CellState::DEAD;
+bool DeadWithOne::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithTwo::transition() {
-  return CellState::DEAD;
+bool DeadWithTwo::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithThree::transition() {
-  return CellState::ALIVE;
+bool DeadWithThree::isAliveAfterTransitioned() {
+  return true;
 }
 
-CellState DeadWithFour::transition() {
-  return CellState::DEAD;
+bool DeadWithFour::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithFive::transition() {
-  return CellState::DEAD;
+bool DeadWithFive::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithSix::transition() {
-  return CellState::DEAD;
+bool DeadWithSix::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithSeven::transition() {
-  return CellState::DEAD;
+bool DeadWithSeven::isAliveAfterTransitioned() {
+  return false;
 }
 
-CellState DeadWithEight::transition() {
-  return CellState::DEAD;
+bool DeadWithEight::isAliveAfterTransitioned() {
+  return false;
 }
+
