@@ -3,7 +3,7 @@
 
 class CellTransitioner {
 public:
-  void transition(Cell *cell, int numOfLiveNeighbours);
+  Cell* transition(Cell *cell, int numOfLiveNeighbours);
 };
 
 #endif
