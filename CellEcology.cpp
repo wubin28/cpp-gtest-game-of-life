@@ -9,5 +9,9 @@ CellState LiveWithOne::transition() {
 }
 
 CellState LiveWithTwo::transition() {
-  return CellState::DEAD;
+  return CellState::ALIVE;
+}
+
+CellState LiveWithThree::transition() {
+  return CellState::ALIVE;
 }
