@@ -4,7 +4,6 @@
 
 using namespace ::testing;
 
-// TODO-intention-working-on: Any live cell with fewer than two live neighbours dies as if caused by under_population
 TEST(Cell, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population)
 {
   // Arrange
@@ -13,6 +12,12 @@ TEST(Cell, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_b
 
   // Act
   CellState transitionedCell = cellTransitioner->transition(liveCell, 1);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(liveCell, 0);
 
   // Assert
   ASSERT_EQ(CellState::DEAD, transitionedCell);
