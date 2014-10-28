@@ -2,6 +2,9 @@
 #include "CellState.h"
 
 CellState CellTransitioner::transition(CellState cellState, int numOfLiveNeighbours) {
+  if (numOfLiveNeighbours < 0) {
+    return CellState::UNKNOWN;
+  }
   if (cellState == CellState::ALIVE) {
     if (numOfLiveNeighbours < 2) {
       return CellState::DEAD;
