@@ -53,4 +53,49 @@ public:
   CellState transition() override;
 };
 
+class DeadWithZero : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithOne : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithTwo : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithThree : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithFour : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithFive : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithSix : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithSeven : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class DeadWithEight : public CellEcology {
+public:
+  CellState transition() override;
+};
+
 #endif
