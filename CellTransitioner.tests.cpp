@@ -134,7 +134,6 @@ TEST(CellTransitioner, Any_dead_cell_with_exactly_three_live_neighbours_becomes_
   ASSERT_EQ(CellState::DEAD, transitionedCell);
 }
 
-// TODO-sad-path: Any_live_cell_with_negative_or_more_than_eight_live_neighbours_has_unknown_state
 TEST(CellTransitioner, Any_live_cell_with_negative_or_more_than_eight_live_neighbours_has_unknown_state) {
   // Arrange
   CellState liveCell = CellState::ALIVE;
@@ -154,4 +153,22 @@ TEST(CellTransitioner, Any_live_cell_with_negative_or_more_than_eight_live_neigh
   ASSERT_EQ(CellState::UNKNOWN, transitionedCell);
 }
 
-// TODO-sad-path: Any_dead_cell_with_negative_or_more_than_eight_live_neighbours_has_unknown_state
+TEST(CellTransitioner, Any_dead_cell_with_negative_or_more_than_eight_live_neighbours_has_unknown_state) {
+  // Arrange
+  CellState liveCell = CellState::DEAD;
+  CellTransitioner *cellTransitioner = new CellTransitioner;
+  CellState transitionedCell = CellState::DEAD;
+
+  // Act
+  transitionedCell = cellTransitioner->transition(liveCell, -1);
+
+  // Assert
+  ASSERT_EQ(CellState::UNKNOWN, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(liveCell, 9);
+
+  // Assert
+  ASSERT_EQ(CellState::UNKNOWN, transitionedCell);
+}
+
