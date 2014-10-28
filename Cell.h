@@ -4,7 +4,7 @@
 class Cell {
 };
 
-class LiveCell {
+class LiveCell : public Cell {
 };
 
 #endif
