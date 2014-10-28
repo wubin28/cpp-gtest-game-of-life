@@ -28,4 +28,29 @@ public:
   CellState transition() override;
 };
 
+class LiveWithFour : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class LiveWithFive : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class LiveWithSix : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class LiveWithSeven : public CellEcology {
+public:
+  CellState transition() override;
+};
+
+class LiveWithEight : public CellEcology {
+public:
+  CellState transition() override;
+};
+
 #endif
