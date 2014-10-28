@@ -2,6 +2,8 @@
 #include "CellState.h"
 
 CellState CellTransitioner::transition(CellState cellState, int numOfLiveNeighbours) {
+  // TODO-smell: No conditional statements
+  // TODO-smell: No naked primitives
   if (numOfLiveNeighbours < 0) {
     return CellState::UNKNOWN;
   }
