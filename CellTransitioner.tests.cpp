@@ -8,28 +8,29 @@ TEST(CellTransitioner, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as
   // Arrange
   CellState liveCell = CellState::ALIVE;
   CellTransitioner *cellTransitioner = new CellTransitioner;
-
-  // Act
-  CellState transitionedCell = cellTransitioner->transition(liveCell, 1);
-
-  // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  CellState transitionedCell = CellState::DEAD;
 
   // Act
   transitionedCell = cellTransitioner->transition(liveCell, 0);
 
   // Assert
   ASSERT_EQ(CellState::DEAD, transitionedCell);
+
+  // Act
+  transitionedCell = cellTransitioner->transition(liveCell, 1);
+
+  // Assert
+  ASSERT_EQ(CellState::DEAD, transitionedCell);
 }
 
-// TODO-intention-working-on: Any live cell with two or three live neighbours lives on to the next generation
 TEST(CellTransitioner, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation) {
   // Arrange
   CellState liveCell = CellState::ALIVE;
   CellTransitioner *cellTransitioner = new CellTransitioner;
+  CellState transitionedCell = CellState::DEAD;
 
   // Act
-  CellState transitionedCell = cellTransitioner->transition(liveCell, 2);
+  transitionedCell = cellTransitioner->transition(liveCell, 2);
 
   // Assert
   ASSERT_EQ(CellState::ALIVE, transitionedCell);
