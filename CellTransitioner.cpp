@@ -10,5 +10,5 @@ CellState CellTransitioner::transition(CellState cellState, int numOfLiveNeighbo
       return CellState::ALIVE;
     }
   }
-  return CellState::DEAD;
+  return CellState::UNKNOWN;
 }

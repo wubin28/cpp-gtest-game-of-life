@@ -2,7 +2,7 @@
 #define CELLSTATE_H
 
 enum CellState {
-  DEAD, ALIVE
+  DEAD, ALIVE, UNKNOWN
 };
 
 #endif
