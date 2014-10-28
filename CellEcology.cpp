@@ -15,3 +15,23 @@ CellState LiveWithTwo::transition() {
 CellState LiveWithThree::transition() {
   return CellState::ALIVE;
 }
+
+CellState LiveWithFour::transition() {
+  return CellState::DEAD;
+}
+
+CellState LiveWithFive::transition() {
+  return CellState::DEAD;
+}
+
+CellState LiveWithSix::transition() {
+  return CellState::DEAD;
+}
+
+CellState LiveWithSeven::transition() {
+  return CellState::DEAD;
+}
+
+CellState LiveWithEight::transition() {
+  return CellState::DEAD;
+}
