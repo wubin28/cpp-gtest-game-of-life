@@ -40,58 +40,32 @@ TEST(CellEcology, Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_
 }
 
 TEST(CellEcology, Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell_as_if_by_reproduction) {
-  // Arrange
-  CellState deadCell = CellState::DEAD;
-  CellTransitioner *cellTransitioner = new CellTransitioner;
-  CellState transitionedCell = CellState::UNKNOWN;
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 1);
+  // Assert
+  ASSERT_EQ(CellState::DEAD, (new DeadWithZero)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 2);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithOne)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 3);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithTwo)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::ALIVE, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 4);
+  ASSERT_EQ(CellState::ALIVE, (new DeadWithThree)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 5);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithFour)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 6);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithFive)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 7);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithSix)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
-
-  // Act
-  transitionedCell = cellTransitioner->transition(deadCell, 8);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithSeven)->transition());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, (new DeadWithEight)->transition());
 }
 
 TEST(CellTransitioner, Any_live_cell_with_negative_or_more_than_eight_live_neighbours_has_unknown_state) {
