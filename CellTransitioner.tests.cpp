@@ -40,41 +40,39 @@ TEST(CellEcology, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_th
   ASSERT_EQ(CellState::ALIVE, transitionedCellState);
 }
 
-TEST(CellTransitioner, Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding) {
+TEST(CellEcology, Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding) {
   // Arrange
-  CellState liveCell = CellState::ALIVE;
-  CellTransitioner *cellTransitioner = new CellTransitioner;
-  CellState transitionedCell = CellState::UNKNOWN;
+  CellState transitionedCellState;
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 4);
+  transitionedCellState = (new LiveWithFour)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 5);
+  transitionedCellState = (new LiveWithFive)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 6);
+  transitionedCellState = (new LiveWithSix)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 7);
+  transitionedCellState = (new LiveWithSeven)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 
   // Act
-  transitionedCell = cellTransitioner->transition(liveCell, 8);
+  transitionedCellState = (new LiveWithEight)->transition();
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, transitionedCell);
+  ASSERT_EQ(CellState::DEAD, transitionedCellState);
 }
 
 TEST(CellTransitioner, Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell_as_if_by_reproduction) {
