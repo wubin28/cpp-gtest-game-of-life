@@ -8,19 +8,16 @@ using namespace ::testing;
 // TODO-refactoring-working-on: Replace class CellTransitioner with class CellEcology and 18 subclasses. Each subclass stands for a situation in which the cell is connecting with some live neighbours (from 0 to 8 for a live and dead cell).
 TEST(CellEcology, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population) {
   // Arrange
-  CellState transitionedCellState = CellState::UNKNOWN;
-  CellEcology *cellEcology;
+  CellState transitionedCellState;
 
   // Act
-  cellEcology = new LiveWithZero;
-  transitionedCellState = cellEcology->transition();
+  transitionedCellState = (new LiveWithZero)->transition();
 
   // Assert
   ASSERT_EQ(CellState::DEAD, transitionedCellState);
 
   // Act
-  cellEcology = new LiveWithOne;
-  transitionedCellState = cellEcology->transition();
+  transitionedCellState = (new LiveWithOne)->transition();
 
   // Assert
   ASSERT_EQ(CellState::DEAD, transitionedCellState);
