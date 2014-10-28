@@ -4,12 +4,13 @@
 
 using namespace ::testing;
 
+// TODO-smell-working-on: Unnecessary CellState. Refactoring to lambda.
 TEST(CellEcology, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population) {
   // Assert
-  ASSERT_EQ(CellState::DEAD, (new LiveWithZero)->transition());
+  ASSERT_FALSE((new LiveWithZero)->isAliveAfterTransitioned());
 
   // Assert
-  ASSERT_EQ(CellState::DEAD, (new LiveWithOne)->transition());
+  ASSERT_FALSE((new LiveWithOne)->isAliveAfterTransitioned());
 }
 
 TEST(CellEcology, Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation) {
