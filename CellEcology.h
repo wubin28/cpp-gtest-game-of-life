@@ -23,4 +23,9 @@ public:
   CellState transition() override;
 };
 
+class LiveWithThree : public CellEcology {
+public:
+  CellState transition() override;
+};
+
 #endif
