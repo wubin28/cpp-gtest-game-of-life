@@ -1,11 +1,9 @@
 #include "CellState.h"
-#include "CellTransitioner.h"
 #include "CellEcology.h"
 #include <gtest/gtest.h>
 
 using namespace ::testing;
 
-// TODO-refactoring-working-on: Replace class CellTransitioner with class CellEcology and 18 subclasses. Each subclass stands for a situation in which the cell is connecting with some live neighbours (from 0 to 8 for a live and dead cell).
 TEST(CellEcology, Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_under_population) {
   // Assert
   ASSERT_EQ(CellState::DEAD, (new LiveWithZero)->transition());
