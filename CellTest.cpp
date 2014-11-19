@@ -1,4 +1,4 @@
-#include "hiker.hpp"
+#include "Cell.hpp"
 #include <gtest/gtest.h>
 
 using namespace ::testing;
