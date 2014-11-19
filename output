@@ -1,14 +1,14 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
 ./run.tests --gtest_shuffle
 Running main() from gtest_main.cc
-Note: Randomizing tests' orders with a seed of 6539 .
+Note: Randomizing tests' orders with a seed of 25171 .
 [==========] Running 1 test from 1 test case.
 [----------] Global test environment set-up.
-[----------] 1 test from Hiker
-[ RUN      ] Hiker.Life_the_universe_and_everything
-[       OK ] Hiker.Life_the_universe_and_everything (0 ms)
-[----------] 1 test from Hiker (0 ms total)
+[----------] 1 test from Cell
+[ RUN      ] Cell.Conways_game_of_life
+[       OK ] Cell.Conways_game_of_life (0 ms)
+[----------] 1 test from Cell (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test case ran. (0 ms total)
+[==========] 1 test from 1 test case ran. (2 ms total)
 [  PASSED  ] 1 test.
