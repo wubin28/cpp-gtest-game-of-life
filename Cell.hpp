@@ -4,4 +4,7 @@
 class LiveCell {
 };
 
+class DeadCell {
+};
+
 #endif
