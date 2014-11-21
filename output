@@ -1,19 +1,24 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
-In file included from CellTest.cpp:1:0:
-Cell.hpp:6:3: error: 'Cell' does not name a type
-   Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours);
-   ^
-In file included from /usr/include/gtest/gtest.h:1807:0,
-                 from CellTest.cpp:2:
-CellTest.cpp: In member function 'virtual void Cell_Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation_Test::TestBody()':
-CellTest.cpp:11:49: error: 'class LiveCell' has no member named 'breedWithLiveNeighbours'
-   ASSERT_EQ(typeid(DeadCell), typeid(*liveCell->breedWithLiveNeighbours(0)));
-                                                 ^
-CellTest.cpp:12:49: error: 'class LiveCell' has no member named 'breedWithLiveNeighbours'
-   ASSERT_EQ(typeid(DeadCell), typeid(*liveCell->breedWithLiveNeighbours(1)));
-                                                 ^
-hiker.cpp:1:21: fatal error: hiker.hpp: No such file or directory
- #include "hiker.hpp"
-                     ^
-compilation terminated.
-make: *** [run.tests] Error 1
+./run.tests --gtest_shuffle
+Running main() from gtest_main.cc
+Note: Randomizing tests' orders with a seed of 20206 .
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from Cell
+[ RUN      ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation
+CellTest.cpp:11: Failure
+Value of: typeid(*liveCell->breedWithLiveNeighbours(0))
+  Actual: 16-byte object <B0-78 64-00 00-00 00-00 A0-D3 42-00 00-00 00-00>
+Expected: typeid(DeadCell)
+Which is: 16-byte object <B0-78 64-00 00-00 00-00 80-D3 42-00 00-00 00-00>
+[  FAILED  ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation (1 ms)
+[----------] 1 test from Cell (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation
+
+ 1 FAILED TEST
+make: *** [run.tests.output] Error 1
