@@ -2,14 +2,18 @@
 #define CELL_INCLUDED
 
 class Cell {
-};
-
-class LiveCell {
 public:
-  Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours);
+  virtual Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours) = 0;
 };
 
-class DeadCell {
+class LiveCell : public Cell {
+public:
+  Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours) override;
+};
+
+class DeadCell : public Cell {
+public:
+  Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours) override;
 };
 
 #endif
