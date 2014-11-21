@@ -1,4 +1,8 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
+In file included from CellTest.cpp:1:0:
+Cell.hpp:6:3: error: 'Cell' does not name a type
+   Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours);
+   ^
 In file included from /usr/include/gtest/gtest.h:1807:0,
                  from CellTest.cpp:2:
 CellTest.cpp: In member function 'virtual void Cell_Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation_Test::TestBody()':
