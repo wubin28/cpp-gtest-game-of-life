@@ -1,16 +1,18 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
 ./run.tests --gtest_shuffle
 Running main() from gtest_main.cc
-Note: Randomizing tests' orders with a seed of 49937 .
-[==========] Running 2 tests from 1 test case.
+Note: Randomizing tests' orders with a seed of 11844 .
+[==========] Running 3 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 2 tests from Cell
+[----------] 3 tests from Cell
 [ RUN      ] Cell.Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation
 [       OK ] Cell.Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation (0 ms)
 [ RUN      ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation
 [       OK ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation (0 ms)
-[----------] 2 tests from Cell (1 ms total)
+[ RUN      ] Cell.Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding
+[       OK ] Cell.Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding (0 ms)
+[----------] 3 tests from Cell (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (2 ms total)
-[  PASSED  ] 2 tests.
+[==========] 3 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 3 tests.
