@@ -1,10 +1,10 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
-/tmp/cctq3VZN.o: In function `Cell_Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation_Test::TestBody()':
-/sandbox/Cell.hpp:9: undefined reference to `vtable for LiveCell'
-/tmp/cctq3VZN.o: In function `Cell_Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation_Test::TestBody()':
-/sandbox/CellTest.cpp:11: undefined reference to `LiveCell::breedWithLiveNeighbours(int)'
-/tmp/cctq3VZN.o: In function `Compare<std::type_info, std::type_info>':
-/usr/include/gtest/gtest.h:1362: undefined reference to `typeinfo for DeadCell'
-/usr/include/gtest/gtest.h:1362: undefined reference to `typeinfo for DeadCell'
-collect2: error: ld returned 1 exit status
+Cell.cpp: In member function 'virtual Cell* LiveCell::breedWithLiveNeighbours(int)':
+Cell.cpp:4:76: error: expected type-specifier before 'ZombieCell'
+   if (numberOfLiveNeighbours < 0 || numberOfLiveNeighbours > 8) return new ZombieCell();
+                                                                            ^
+Cell.cpp:4:76: error: expected ';' before 'ZombieCell'
+Cell.cpp:4:87: error: 'ZombieCell' was not declared in this scope
+   if (numberOfLiveNeighbours < 0 || numberOfLiveNeighbours > 8) return new ZombieCell();
+                                                                                       ^
 make: *** [run.tests] Error 1
