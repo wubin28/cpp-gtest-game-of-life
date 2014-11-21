@@ -9,6 +9,7 @@ Cell* LiveCell::breedWithLiveNeighbours(int numberOfLiveNeighbours) {
 
 Cell* DeadCell::breedWithLiveNeighbours(int numberOfLiveNeighbours) {
   if (numberOfLiveNeighbours < 0 || numberOfLiveNeighbours > 8) return new ZombieCell();
+  if (numberOfLiveNeighbours == 3) return new LiveCell();
   return new DeadCell();
 }
 

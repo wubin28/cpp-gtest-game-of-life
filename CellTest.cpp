@@ -42,11 +42,11 @@ TEST(Cell, Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell)
   ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(1)));
   ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(2)));
   ASSERT_EQ(typeid(LiveCell), typeid(*deadCell->breedWithLiveNeighbours(3)));
-  ASSERT_EQ(typeid(LiveCell), typeid(*deadCell->breedWithLiveNeighbours(4)));
-  ASSERT_EQ(typeid(LiveCell), typeid(*deadCell->breedWithLiveNeighbours(5)));
-  ASSERT_EQ(typeid(LiveCell), typeid(*deadCell->breedWithLiveNeighbours(6)));
-  ASSERT_EQ(typeid(LiveCell), typeid(*deadCell->breedWithLiveNeighbours(7)));
-  ASSERT_EQ(typeid(LiveCell), typeid(*deadCell->breedWithLiveNeighbours(8)));
+  ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(4)));
+  ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(5)));
+  ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(6)));
+  ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(7)));
+  ASSERT_EQ(typeid(DeadCell), typeid(*deadCell->breedWithLiveNeighbours(8)));
   ASSERT_EQ(typeid(ZombieCell), typeid(*deadCell->breedWithLiveNeighbours(9)));
 }
 
