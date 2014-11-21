@@ -1,20 +1,22 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
 ./run.tests --gtest_shuffle
 Running main() from gtest_main.cc
-Note: Randomizing tests' orders with a seed of 36921 .
-[==========] Running 4 tests from 1 test case.
+Note: Randomizing tests' orders with a seed of 51958 .
+[==========] Running 5 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 4 tests from Cell
-[ RUN      ] Cell.Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell
-[       OK ] Cell.Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell (0 ms)
-[ RUN      ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation
-[       OK ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation (0 ms)
+[----------] 5 tests from Cell
 [ RUN      ] Cell.Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation
 [       OK ] Cell.Any_live_cell_with_two_or_three_live_neighbours_lives_on_to_the_next_generation (0 ms)
+[ RUN      ] Cell.Any_live_or_dead_cell_with_invalid_number_of_live_neighbours_becomes_a_zombie_cell
+[       OK ] Cell.Any_live_or_dead_cell_with_invalid_number_of_live_neighbours_becomes_a_zombie_cell (0 ms)
 [ RUN      ] Cell.Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding
 [       OK ] Cell.Any_live_cell_with_more_than_three_live_neighbours_dies_as_if_by_overcrowding (0 ms)
-[----------] 4 tests from Cell (1 ms total)
+[ RUN      ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation
+[       OK ] Cell.Any_live_cell_with_fewer_than_two_live_neighbours_dies_as_if_caused_by_underpopulation (0 ms)
+[ RUN      ] Cell.Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell
+[       OK ] Cell.Any_dead_cell_with_exactly_three_live_neighbours_becomes_a_live_cell (0 ms)
+[----------] 5 tests from Cell (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test case ran. (1 ms total)
-[  PASSED  ] 4 tests.
+[==========] 5 tests from 1 test case ran. (3 ms total)
+[  PASSED  ] 5 tests.
