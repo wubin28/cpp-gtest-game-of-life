@@ -1,10 +1,9 @@
 g++ -I. -g -std=c++11 -Wall -Wextra -Werror -pthread -O *.cpp -lgtest -lgtest_main -o run.tests
-/tmp/cccoOptU.o: In function `LiveCell::breedWithLiveNeighbours(int)':
-/sandbox/Cell.hpp:19: undefined reference to `vtable for ZombieCell'
-/sandbox/Cell.hpp:14: undefined reference to `vtable for DeadCell'
-/sandbox/Cell.hpp:14: undefined reference to `vtable for DeadCell'
-/tmp/ccXomv4r.o: In function `Compare<std::type_info, std::type_info>':
-/usr/include/gtest/gtest.h:1362: undefined reference to `typeinfo for DeadCell'
-/usr/include/gtest/gtest.h:1362: undefined reference to `typeinfo for DeadCell'
-collect2: error: ld returned 1 exit status
+Cell.cpp:9:7: error: unused parameter 'numberOfLiveNeighbours' [-Werror=unused-parameter]
+ Cell* DeadCell::breedWithLiveNeighbours(int numberOfLiveNeighbours) {
+       ^
+Cell.cpp:13:7: error: unused parameter 'numberOfLiveNeighbours' [-Werror=unused-parameter]
+ Cell* ZombieCell::breedWithLiveNeighbours(int numberOfLiveNeighbours) {
+       ^
+cc1plus: all warnings being treated as errors
 make: *** [run.tests] Error 1
