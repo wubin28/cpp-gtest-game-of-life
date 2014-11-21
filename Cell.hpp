@@ -16,4 +16,9 @@ public:
   Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours) override;
 };
 
+class ZombieCell : public Cell {
+public:
+  Cell *breedWithLiveNeighbours(int numberOfLiveNeighbours) override;
+};
+
 #endif
